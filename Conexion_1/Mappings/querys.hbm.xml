@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true"  assembly="Conexion"  namespace="Conexion.Entities">
+  <sql-query name="deleteInfoEnTabla" cacheable="true" comment="Registra las alertas a WALS" >
+    <![CDATA[DELETE FROM F4311Z1XY
+	  WHERE LTRIM(RTRIM(Usuario)) = :user]]>
+  </sql-query>
+  <sql-query name="GetEncabezadoODC" cacheable="true" comment="Registra las alertas a WALS" >
+    <![CDATA[SET DATEFORMAT dmy
+    SELECT Usuario 'Usuario'
+,Compania 'Compañia'
+,TipoOrden 'TipoOrden'
+,Almacen 'Almacen'
+,Proveedor 'Proveedor'
+,DirEntrega 'DirEntrega'
+,FechaPrograCompra 'FechaProgramacionCompra'
+,max(Observaciones) as 'Descripcion'
+,Moneda 'Moneda'
+,TipoCambio 'TipoCambio'
+,EstacionTrabajo 'Maquina'
+,CondicionPago 'CondicionPago'
+,CodigoRetencion 'CodigoRetencion'
+, -1 'NoReque'
+FROM [VW_ODCEncabezado]
+WHERE Usuario = @Usuario
+GROUP BY
+Usuario
+,Compania
+,TipoOrden
+,Almacen
+,Proveedor
+,DirEntrega
+,FechaPrograCompra
+,Moneda
+,TipoCambio
+,EstacionTrabajo
+,CondicionPago
+,CodigoRetencion
+]]>
+  </sql-query>
+  <sql-query name="GetInfoArticulo" cacheable="true" comment="Registra las alertas a WALS" >
+    <![CDATA[ SELECT UPPER(LTRIM(RTRIM(Almacen))) Almacen
+    ,Proveedor
+    ,Corto 
+	,IMAITM
+,Cantidad
+,IIF(TipoOrden <> 'OK' or CostoUnitario = ''
+					,PRODDTA.[ObtenerCosto] (Cast(Corto as float),Almacen, Proveedor)
+          ,Cast( ltrim(rtrim(replace(CostoUnitario,',',''))) as float)
+	 ) PrecioUnitario
+FROM F4311z1XY
+JOIN F4101 ON LTRIM(RTRIM(Corto)) = LTRIM(RTRIM(IMITM))
+WHERE LTRIM(RTRIM(Almacen)) = :almacen
+AND LTRIM(RTRIM(Proveedor)) = :Proveedor
+AND LTRIM(RTRIM(Usuario)) = :usuario]]>
+  </sql-query>
+</hibernate-mapping>

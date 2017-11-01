@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CA30FB2-0157-48CB-8DC5-1F0955C5ECB0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Conexion</RootNamespace>
+    <AssemblyName>Conexion</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.4.0.0.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net40\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Entities\Entradassalidas.cs" />
+    <Compile Include="Entities\Pedido.cs" />
+    <Compile Include="Entities\WalsCatalogoUsuarios.cs" />
+    <Compile Include="Entities\WalsAlterno.cs" />
+    <Compile Include="Entities\WalsArticulos.cs" />
+    <Compile Include="Entities\WalsAvisosEntradaDV.cs" />
+    <Compile Include="Entities\WalsAvisosEntrada.cs" />
+    <Compile Include="Entities\WalsAyudanteChofer.cs" />
+    <Compile Include="Entities\WalsCargaDePedidos.cs" />
+    <Compile Include="Entities\WalsCargaDevolucionesProveedor.cs" />
+    <Compile Include="Entities\WalsCatalogoAlertas.cs" />
+    <Compile Include="Entities\WalsCatalounidatrans.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Entities\WalsChoferes.cs" />
+    <Compile Include="Entities\WalsClientes.cs" />
+    <Compile Include="Entities\WalsConfcliente.cs" />
+    <Compile Include="Entities\WalsDestinatarios.cs" />
+    <Compile Include="Entities\WalsMotivos.cs" />
+    <Compile Include="Entities\WalsNormasEmpaque.cs" />
+    <Compile Include="Entities\WalsProveedores.cs" />
+    <Compile Include="Entities\WalsRemisionFactura.cs" />
+    <Compile Include="Entities\WALSTransportistas.cs" />
+    <Compile Include="Entities\WalsVendedores.cs" />
+    <Compile Include="EstatusDespachadorColaType.cs" />
+    <Compile Include="EstatusDespachadorType.cs" />
+    <Compile Include="Entities\Coladespachador.cs" />
+    <Compile Include="Entities\Despachador.cs" />
+    <Compile Include="FluentNHibernateExtensions.cs" />
+    <Compile Include="Mappings\ColadespachadorMap.cs" />
+    <Compile Include="Mappings\DespachadorMap.cs" />
+    <Compile Include="Mappings\EntradassalidasMap.cs" />
+    <Compile Include="Mappings\PedidoMap.cs" />
+    <Compile Include="Mappings\WalsCatalogoUsuariosMap.cs" />
+    <Compile Include="Mappings\WalsAlternoMap.cs" />
+    <Compile Include="Mappings\WalsArticulosMap.cs" />
+    <Compile Include="Mappings\WalsAvisosEntradaDVMap.cs" />
+    <Compile Include="Mappings\WalsAvisosEntradaMap.cs" />
+    <Compile Include="Mappings\WalsAyudanteChoferMap.cs" />
+    <Compile Include="Mappings\WalsCargaDePedidosMap.cs" />
+    <Compile Include="Mappings\WalsCargaDevolucionesProveedorMap.cs" />
+    <Compile Include="Mappings\WalsCatalogoAlertasMap.cs" />
+    <Compile Include="Mappings\WalsCatalounidatransMap.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Mappings\WalsChoferesMap.cs" />
+    <Compile Include="Mappings\WalsClientesMap.cs" />
+    <Compile Include="Mappings\WalsConfclienteMap.cs" />
+    <Compile Include="Mappings\WalsDestinatariosMap.cs" />
+    <Compile Include="Mappings\WalsMotivosMap.cs" />
+    <Compile Include="Mappings\WalsNormasEmpaqueMap.cs" />
+    <Compile Include="Mappings\WalsProveedoresMap.cs" />
+    <Compile Include="Mappings\WalsRemisionFacturaMap.cs" />
+    <Compile Include="Mappings\WalsVendedoresMap.cs" />
+    <Compile Include="Mappings\WALSTransportistasMap.cs" />
+    <Compile Include="Ninject\IdGenerator.cs" />
+    <Compile Include="Ninject\IReadOnlyRepository.cs" />
+    <Compile Include="Ninject\IUnitOfWork.cs" />
+    <Compile Include="Ninject\NHibernateHelper.cs" />
+    <Compile Include="Ninject\Repository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registros.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mappings\querys.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

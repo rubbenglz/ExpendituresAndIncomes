@@ -1,0 +1,144 @@
+using System; 
+using System.Collections.Generic; 
+using System.Text; 
+using FluentNHibernate.Mapping;
+using Conexion.Entities; 
+
+namespace Conexion.Mappings {
+    
+    
+    public class F4301Map : ClassMap<F4301> {
+        
+        public F4301Map() {
+			Table("F4301");
+			LazyLoad();
+			CompositeId().KeyProperty(x => x.PHKCOO, "PHKCOO")
+			             .KeyProperty(x => x.PHDOCO, "PHDOCO")
+			             .KeyProperty(x => x.PHDCTO, "PHDCTO")
+			             .KeyProperty(x => x.PHSFXO, "PHSFXO");
+			Map(x => x.PHMCU).Column("PHMCU").Length(12);
+			Map(x => x.PHOKCO).Column("PHOKCO").Length(5);
+			Map(x => x.PHOORN).Column("PHOORN").Length(8);
+			Map(x => x.PHOCTO).Column("PHOCTO").Length(2);
+			Map(x => x.PHRKCO).Column("PHRKCO").Length(5);
+			Map(x => x.PHRORN).Column("PHRORN").Length(8);
+			Map(x => x.PHRCTO).Column("PHRCTO").Length(2);
+			Map(x => x.PHAN8).Column("PHAN8").Precision(53);
+			Map(x => x.PHSHAN).Column("PHSHAN").Precision(53);
+			Map(x => x.PHDRQJ).Column("PHDRQJ").Precision(18);
+			Map(x => x.PHTRDJ).Column("PHTRDJ").Precision(18);
+			Map(x => x.PHPDDJ).Column("PHPDDJ").Precision(18);
+			Map(x => x.PHOPDJ).Column("PHOPDJ").Precision(18);
+			Map(x => x.PHADDJ).Column("PHADDJ").Precision(18);
+			Map(x => x.PHCNDJ).Column("PHCNDJ").Precision(18);
+			Map(x => x.PHPEFJ).Column("PHPEFJ").Precision(18);
+			Map(x => x.PHPPDJ).Column("PHPPDJ").Precision(18);
+			Map(x => x.PHPSDJ).Column("PHPSDJ").Precision(18);
+			Map(x => x.PHVR01).Column("PHVR01").Length(25);
+			Map(x => x.PHVR02).Column("PHVR02").Length(25);
+			Map(x => x.PHDEL1).Column("PHDEL1").Length(30);
+			Map(x => x.PHDEL2).Column("PHDEL2").Length(30);
+			Map(x => x.PHRMK).Column("PHRMK").Length(30);
+			Map(x => x.PHDESC).Column("PHDESC").Length(30);
+			Map(x => x.PHINMG).Column("PHINMG").Length(10);
+			Map(x => x.PHASN).Column("PHASN").Length(8);
+			Map(x => x.PHPRGP).Column("PHPRGP").Length(8);
+			Map(x => x.PHPTC).Column("PHPTC").Length(3);
+			Map(x => x.PHEXR1).Column("PHEXR1").Length(2);
+			Map(x => x.PHTXA1).Column("PHTXA1").Length(10);
+			Map(x => x.PHTXCT).Column("PHTXCT").Length(20);
+			Map(x => x.PHHOLD).Column("PHHOLD").Length(2);
+			Map(x => x.PHATXT).Column("PHATXT").Length(1);
+			Map(x => x.PHINVC).Column("PHINVC").Precision(53);
+			Map(x => x.PHNTR).Column("PHNTR").Length(2);
+			Map(x => x.PHCNID).Column("PHCNID").Length(20);
+			Map(x => x.PHFRTH).Column("PHFRTH").Length(3);
+			Map(x => x.PHZON).Column("PHZON").Length(3);
+			Map(x => x.PHANBY).Column("PHANBY").Precision(53);
+			Map(x => x.PHANCR).Column("PHANCR").Precision(53);
+			Map(x => x.PHMOT).Column("PHMOT").Length(3);
+			Map(x => x.PHCOT).Column("PHCOT").Length(3);
+			Map(x => x.PHRCD).Column("PHRCD").Length(3);
+			Map(x => x.PHFRTC).Column("PHFRTC").Length(1);
+			Map(x => x.PHFUF1).Column("PHFUF1").Length(1);
+			Map(x => x.PHFUF2).Column("PHFUF2").Length(1);
+			Map(x => x.PHOTOT).Column("PHOTOT").Precision(53);
+			Map(x => x.PHPCRT).Column("PHPCRT").Precision(53);
+			Map(x => x.PHRTNR).Column("PHRTNR").Length(3);
+			Map(x => x.PHWUMD).Column("PHWUMD").Length(2);
+			Map(x => x.PHVUMD).Column("PHVUMD").Length(2);
+			Map(x => x.PHPURG).Column("PHPURG").Length(1);
+			Map(x => x.PHLGCT).Column("PHLGCT").Length(1);
+			Map(x => x.PHPROM).Column("PHPROM").Length(1);
+			Map(x => x.PHMATY).Column("PHMATY").Length(1);
+			Map(x => x.PHOSTS).Column("PHOSTS").Length(1);
+			Map(x => x.PHAVCH).Column("PHAVCH").Length(1);
+			Map(x => x.PHPRPY).Column("PHPRPY").Length(1);
+			Map(x => x.PHCRMD).Column("PHCRMD").Length(1);
+			Map(x => x.PHPRP5).Column("PHPRP5").Length(3);
+			Map(x => x.PHARTG).Column("PHARTG").Length(12);
+			Map(x => x.PHCORD).Column("PHCORD").Precision(53);
+			Map(x => x.PHCRRM).Column("PHCRRM").Length(1);
+			Map(x => x.PHCRCD).Column("PHCRCD").Length(3);
+			Map(x => x.PHCRR).Column("PHCRR").Precision(53);
+			Map(x => x.PHLNGP).Column("PHLNGP").Length(2);
+			Map(x => x.PHFAP).Column("PHFAP").Precision(53);
+			Map(x => x.PHORBY).Column("PHORBY").Length(10);
+			Map(x => x.PHTKBY).Column("PHTKBY").Length(10);
+			Map(x => x.PHURCD).Column("PHURCD").Length(2);
+			Map(x => x.PHURDT).Column("PHURDT").Precision(18);
+			Map(x => x.PHURAT).Column("PHURAT").Precision(53);
+			Map(x => x.PHURAB).Column("PHURAB").Precision(53);
+			Map(x => x.PHURRF).Column("PHURRF").Length(15);
+			Map(x => x.PHUSER).Column("PHUSER").Length(10);
+			Map(x => x.PHPID).Column("PHPID").Length(10);
+			Map(x => x.PHJOBN).Column("PHJOBN").Length(10);
+			Map(x => x.PHUPMJ).Column("PHUPMJ").Precision(18);
+			Map(x => x.PHTDAY).Column("PHTDAY").Precision(53);
+			Map(x => x.PHRSHT).Column("PHRSHT").Precision(53);
+			Map(x => x.PHDRQT).Column("PHDRQT").Precision(53);
+			Map(x => x.PHDOC1).Column("PHDOC1").Precision(53);
+			Map(x => x.PHDCT4).Column("PHDCT4").Length(2);
+			Map(x => x.PHBCRC).Column("PHBCRC").Length(3);
+			Map(x => x.PHMKFR).Column("PHMKFR").Precision(53);
+			Map(x => x.PHPOHP01).Column("PHPOHP01").Length(1);
+			Map(x => x.PHPOHP02).Column("PHPOHP02").Length(1);
+			Map(x => x.PHPOHP03).Column("PHPOHP03").Length(1);
+			Map(x => x.PHPOHP04).Column("PHPOHP04").Length(1);
+			Map(x => x.PHPOHP05).Column("PHPOHP05").Length(1);
+			Map(x => x.PHPOHP06).Column("PHPOHP06").Length(1);
+			Map(x => x.PHPOHP07).Column("PHPOHP07").Length(1);
+			Map(x => x.PHPOHP08).Column("PHPOHP08").Length(1);
+			Map(x => x.PHPOHP09).Column("PHPOHP09").Length(1);
+			Map(x => x.PHPOHP10).Column("PHPOHP10").Length(1);
+			Map(x => x.PHPOHP11).Column("PHPOHP11").Length(1);
+			Map(x => x.PHPOHP12).Column("PHPOHP12").Length(1);
+			Map(x => x.PHPOHC01).Column("PHPOHC01").Length(3);
+			Map(x => x.PHPOHC02).Column("PHPOHC02").Length(3);
+			Map(x => x.PHPOHC03).Column("PHPOHC03").Length(3);
+			Map(x => x.PHPOHC04).Column("PHPOHC04").Length(3);
+			Map(x => x.PHPOHC05).Column("PHPOHC05").Length(3);
+			Map(x => x.PHPOHC06).Column("PHPOHC06").Length(3);
+			Map(x => x.PHPOHC07).Column("PHPOHC07").Length(10);
+			Map(x => x.PHPOHC08).Column("PHPOHC08").Length(10);
+			Map(x => x.PHPOHC09).Column("PHPOHC09").Length(10);
+			Map(x => x.PHPOHC10).Column("PHPOHC10").Length(10);
+			Map(x => x.PHPOHC11).Column("PHPOHC11").Length(10);
+			Map(x => x.PHPOHC12).Column("PHPOHC12").Length(10);
+			Map(x => x.PHPOHD01).Column("PHPOHD01").Precision(18);
+			Map(x => x.PHPOHD02).Column("PHPOHD02").Precision(18);
+			Map(x => x.PHPOHAB01).Column("PHPOHAB01").Precision(53);
+			Map(x => x.PHPOHAB02).Column("PHPOHAB02").Precision(53);
+			Map(x => x.PHCUKID).Column("PHCUKID").Precision(53);
+			Map(x => x.PHPOHP13).Column("PHPOHP13").Length(30);
+			Map(x => x.PHPOHU01).Column("PHPOHU01");
+			Map(x => x.PHPOHU02).Column("PHPOHU02");
+			Map(x => x.PHRETI).Column("PHRETI").Length(1);
+			Map(x => x.PHCLASS01).Column("PHCLASS01").Length(3);
+			Map(x => x.PHCLASS02).Column("PHCLASS02").Length(3);
+			Map(x => x.PHCLASS03).Column("PHCLASS03").Length(3);
+			Map(x => x.PHCLASS04).Column("PHCLASS04").Length(3);
+			Map(x => x.PHCLASS05).Column("PHCLASS05").Length(3);
+        }
+    }
+}

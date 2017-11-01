@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true"  assembly="Conexion"  namespace="Conexion.Entities">
+  <sql-query name="deleteInfoEnTabla" cacheable="true" comment="Registra las alertas a WALS" >
+    <![CDATA[DELETE FROM F4311Z1XY
+	  WHERE LTRIM(RTRIM(Usuario)) = :user]]>
+  </sql-query>  
+</hibernate-mapping>
